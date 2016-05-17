@@ -39,8 +39,10 @@ install:
 - conan install
 
 before_script:
- - ls
- - find . -name "protoc"
+ # - ls
+ # - find . -name "protoc"
+ - ls -ltra > fer.txt
+ - cat fer.txt
  - ./protoc message.proto --cpp_out="."
 
 script:
