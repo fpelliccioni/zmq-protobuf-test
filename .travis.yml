@@ -39,7 +39,9 @@ install:
 - conan install
 
 before_script:
- - protoc message.proto --cpp_out="."
+ - ls
+ - find . -name "protoc"
+ - ./protoc message.proto --cpp_out="."
 
 script:
  - mkdir build
