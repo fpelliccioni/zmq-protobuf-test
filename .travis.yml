@@ -28,6 +28,16 @@ install:
   fi
   cd ..
 
+# Download conan
+- sudo apt-get install autoconf automake libtool curl make g++ unzip
+- git clone https://github.com/google/protobuf.git
+- cd protobuf
+- ./autogen.sh
+- ./configure
+- make
+- make check
+- sudo make install
+- sudo ldconfig # refresh shared library cache.
 
 
 # Download conan
@@ -41,14 +51,16 @@ install:
 before_script:
  # - ls
  # - find . -name "protoc"
- - chmod a+x protoc
- - ls -ltra > fer.txt
- - cat fer.txt
+ # - chmod a+x protoc
+ # - ls -ltra > fer.txt
+ # - cat fer.txt
  # - getfacl .
  # - ls -lead
- - ls -ld .
+ # - ls -ld .
  # - ./protoc --version
- - ./protoc message.proto --cpp_out="."
+ # - ./protoc message.proto --cpp_out="."
+ - protoc --version
+ - protoc message.proto --cpp_out="."
 
 script:
  - mkdir build
