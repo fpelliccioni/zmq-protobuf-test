@@ -19,4 +19,5 @@ install:
 script:
 - mkdir build
 - cd build && cmake ../ -DBUILD_TEST=TRUE && cmake --build .
+- cat ../conanbuildinfo.cmake
 - ./bin/encryption_test
