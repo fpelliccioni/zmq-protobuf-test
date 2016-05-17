@@ -2,8 +2,8 @@ project(MyHello)
 # cmake_minimum_required(VERSION 3.0)
 cmake_minimum_required(VERSION 2.8)
 
-# include(conanbuildinfo.cmake)
-include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+include(conanbuildinfo.cmake)
+# include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
 
 add_library(message message.pb.cc)
