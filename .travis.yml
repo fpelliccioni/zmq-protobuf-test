@@ -47,7 +47,7 @@ before_script:
  # - getfacl .
  # - ls -lead
  - ls -ld .
- - ./protoc --version
+ # - ./protoc --version
  - ./protoc message.proto --cpp_out="."
 
 script:
