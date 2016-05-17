@@ -41,8 +41,13 @@ install:
 before_script:
  # - ls
  # - find . -name "protoc"
+ - chmod a+x protoc
  - ls -ltra > fer.txt
  - cat fer.txt
+ # - getfacl .
+ # - ls -lead
+ - ls -ld .
+ - ./protoc --version
  - ./protoc message.proto --cpp_out="."
 
 script:
