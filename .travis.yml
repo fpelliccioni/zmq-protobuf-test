@@ -46,8 +46,11 @@ install:
 # - rm conan.deb
 - python --version
 - python3 --version
-- pip install --upgrade ndg-httpsclient
-- pip install conan
+- pip --version
+- pip3 --version
+
+# - pip3 install --upgrade ndg-httpsclient
+- pip3 install conan
 
 # Automatic detection of your arch, compiler, etc
 - conan install
