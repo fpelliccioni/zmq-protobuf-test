@@ -7,8 +7,9 @@ cmake
 
 [imports]
 bin, protoc* -> ./
-bin, *.dll -> ./
 bin, *.dylib -> ./
+bin, *.so -> ./
+bin, *.dll -> ./
 
 # bin, *.dll -> ./bin
 # bin, *.dll -> ./bin
