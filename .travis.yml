@@ -54,18 +54,11 @@ before_script:
  # - ls
  # - find . -name "protoc"
  - chmod a+x protoc
- # - ls -ltra > fer.txt
- # - cat fer.txt
- # - getfacl .
- # - ls -lead
- # - ls -ld .
  # - ./protoc --version
- # - ./protoc message.proto --cpp_out="."
- - ls -ltra
- - find ~/.conan -name "libproto*"
+ - ./protoc message.proto --cpp_out="."
  # - ls -ltra deps
  # - ls -ltra bin
- - protoc --version
+ # - protoc --version
  # - protoc message.proto --cpp_out="."
 
 script:
