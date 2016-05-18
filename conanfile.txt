@@ -1,5 +1,6 @@
 [requires]
-zmqcpp/4.1.1@memsharded/testing
+# zmqcpp/4.1.1@memsharded/testing
+zmqcpp/4.1.1@memsharded/stable 
 Protobuf/2.6.1@memsharded/testing
 
 [generators]
@@ -8,7 +9,6 @@ cmake
 [options]
 Protobuf:shared=False
 ZMQ:shared=False
-
 
 [imports]
 bin, protoc* -> ./

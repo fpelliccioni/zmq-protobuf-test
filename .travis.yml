@@ -51,18 +51,11 @@ install:
 
 
 before_script:
- # - ls
- # - find . -name "protoc"
- - chmod a+x protoc
+ # - chmod a+x protoc
  # - ./protoc --version
  - ./protoc message.proto --cpp_out="."
- # - ls -ltra deps
- # - ls -ltra bin
- # - protoc --version
- # - protoc message.proto --cpp_out="."
 
 script:
  - mkdir build
  - cd build && cmake ../ -DBUILD_TEST=TRUE && cmake --build .
- #- cat ../conanbuildinfo.cmake
- - ./bin/encryption_test
+ # - ./bin/encryption_test
