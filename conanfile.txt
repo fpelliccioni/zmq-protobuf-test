@@ -6,7 +6,7 @@ Protobuf/2.6.1@memsharded/testing
 cmake
 
 [options]
-Protobuf:Shared=False
+Protobuf:shared=False
 ZMQ:shared=False
 
 
