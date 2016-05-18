@@ -152,6 +152,7 @@ install:
     else
       brew install cmake
     fi
+    cd ..
 
   # Download & Install Conan
   - wget http://downloads.conan.io/latest_debian -O conan.deb
