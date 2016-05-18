@@ -10,6 +10,9 @@ bin, protoc* -> ./
 bin, *.dylib -> ./
 bin, *.so -> ./
 bin, *.dll -> ./
+lib, *.dylib -> ./
+lib, *.so -> ./
+lib, *.dll -> ./
 
 # bin, *.dll -> ./bin
 # bin, *.dll -> ./bin
