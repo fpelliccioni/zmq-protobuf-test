@@ -188,25 +188,20 @@ install:
 
   # Automatic detection of your arch, compiler, etc
   # - conan install
-  #conan install Protobuf/2.6.1@memsharded/testing -s arch="x86" -s build_type="Release" -s compiler="apple-clang" -s compiler.libcxx="libc++" -s compiler.version="7.0" -s os="Macos" -o shared="True" 
+  # conan install Protobuf/2.6.1@memsharded/testing -s arch="x86" -s build_type="Release" -s compiler="apple-clang" -s compiler.libcxx="libc++" -s compiler.version="7.0" -s os="Macos" -o shared="True" 
 
-  - |
-    if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
-      conan install
-    else
-      conan install  -s compiler="apple-clang" -s compiler.libcxx="libc++" -s compiler.version="7.0" 
-      # -s os="Macos" 
-      # -o shared="True" 
-      # -s build_type="Release"
+  - conan install  -s compiler="apple-clang" -s compiler.version="7.0" -s compiler.libcxx="libc++" 
 
-      # compiler=gcc
-      #   compiler.version=4.2
-      #   compiler.libcxx=libstdc++
-      #   build_type=Release
-      # *** You can change them in ~/.conan/conan.conf ***
-      # *** Or override with -s compiler='other' -s ...s***
 
-    fi
+  # - |
+  #   if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
+  #     # conan install
+  #   else
+  #     conan install  -s compiler="apple-clang" -s compiler.version="7.0" -s compiler.libcxx="libc++" 
+  #     # -s os="Macos" 
+  #     # -o shared="True" 
+  #     # -s build_type="Release"
+  #   fi
 
 
 
