@@ -60,6 +60,7 @@ before_script:
  # - ./protoc --version
  # - ./protoc message.proto --cpp_out="."
  - ls -ltra
+ - ls -ltra bin
  - protoc --version
  # - protoc message.proto --cpp_out="."
 
