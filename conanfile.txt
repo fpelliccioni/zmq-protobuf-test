@@ -1,6 +1,6 @@
 [requires]
 zmqcpp/4.1.1@memsharded/testing
-# Protobuf/2.6.1@memsharded/testing
+Protobuf/2.6.1@memsharded/testing
 
 [generators]
 cmake
@@ -8,3 +8,5 @@ cmake
 [imports]
 bin, protoc* -> ./
 bin, *.dll -> ./bin
+bin, *.dll -> ./bin
+bin, *.dylib -> ./bin
