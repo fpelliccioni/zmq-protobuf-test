@@ -138,6 +138,12 @@ before_install:
   - if [ -n "$CLANG_VERSION" ]; then export CXX="clang++-${CLANG_VERSION}" CC="clang-${CLANG_VERSION}"; fi
   # - if [[ "${TRAVIS_OS_NAME}" == "osx" ]]; then brew install cmake; fi
 
+  - echo $GCC_VERSION
+  - echo $CLANG_VERSION
+  - echo $CC
+  - echo $CXX
+
+
 install:
   # All the dependencies are installed in ${TRAVIS_BUILD_DIR}/deps/
   - DEPS_DIR="${TRAVIS_BUILD_DIR}/deps"
@@ -181,8 +187,29 @@ install:
   # - pip3 install conan
 
   # Automatic detection of your arch, compiler, etc
-  - conan install
+  # - conan install
   #conan install Protobuf/2.6.1@memsharded/testing -s arch="x86" -s build_type="Release" -s compiler="apple-clang" -s compiler.libcxx="libc++" -s compiler.version="7.0" -s os="Macos" -o shared="True" 
+
+  - |
+    if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
+      conan install
+    else
+      conan install  -s compiler="apple-clang" -s compiler.libcxx="libc++" -s compiler.version="7.0" 
+      # -s os="Macos" 
+      # -o shared="True" 
+      # -s build_type="Release"
+
+      # compiler=gcc
+      #   compiler.version=4.2
+      #   compiler.libcxx=libstdc++
+      #   build_type=Release
+      # *** You can change them in ~/.conan/conan.conf ***
+      # *** Or override with -s compiler='other' -s ...s***
+
+    fi
+
+
+
 
 
 # install:
