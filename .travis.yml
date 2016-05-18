@@ -60,7 +60,7 @@ install:
 
 
 before_script:
- # - chmod a+x protoc
+ - chmod a+x protoc
  # - ./protoc --version
  - ./protoc message.proto --cpp_out="."
 
