@@ -51,7 +51,7 @@ install:
 before_script:
  # - ls
  # - find . -name "protoc"
- # - chmod a+x protoc
+ - chmod a+x protoc
  # - ls -ltra > fer.txt
  # - cat fer.txt
  # - getfacl .
