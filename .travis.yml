@@ -7,7 +7,7 @@ install:
 - sudo apt-get update -qq
 - sudo apt-get install -qq g++-4.9
 - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.9
-
+- gcc --version
 
 ############################################################################
 # All the dependencies are installed in ${TRAVIS_BUILD_DIR}/deps/
@@ -62,7 +62,8 @@ before_script:
  # - ./protoc --version
  # - ./protoc message.proto --cpp_out="."
  - ls -ltra
- - ls -ltra deps
+ - find ~/.conan -name "libproto*"
+ # - ls -ltra deps
  # - ls -ltra bin
  - protoc --version
  # - protoc message.proto --cpp_out="."
