@@ -44,6 +44,8 @@ install:
 # - wget http://downloads.conan.io/latest_debian -O conan.deb
 # - sudo dpkg -i conan.deb
 # - rm conan.deb
+- python --version
+- python3 --version
 - pip install --upgrade ndg-httpsclient
 - pip install conan
 
