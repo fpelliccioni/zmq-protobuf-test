@@ -46,6 +46,8 @@ install:
 # - rm conan.deb
 - python --version
 - python3 --version
+- curl -O https://bootstrap.pypa.io/get-pip.py
+- sudo python3 get-pip.py
 - pip --version
 - pip3 --version
 
