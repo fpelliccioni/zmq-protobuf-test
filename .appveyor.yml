@@ -43,8 +43,7 @@ build_script:
   # - cmd: cmake --build . --config Release
 
   - cmd: cmake .. -G "Visual Studio 14 2015 Win64"
-  # - cmd: cmake --build . --config %CONFIGURATION%
-  - cmd: cmake --build . --config Release
+  - cmd: cmake --build . --config %CONFIGURATION%
 
 test_script:
   - cmd: cd bin
