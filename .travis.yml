@@ -48,20 +48,21 @@ matrix:
       os: linux
       addons: *clang37
 
-    # Linux clang-3.8 ------------------------------------------------------------
-    - env: CLANG_VERSION=3.8 CXX_FLAGS="-std=c++14" BUILD_TYPE=Debug
-      os: linux
-      addons: &clang38
-        apt:
-          packages:
-            - clang-3.8
-          sources:
-            - ubuntu-toolchain-r-test
-            - llvm-toolchain-precise-3.8
+    # 2016/May: Clang 3.8 is not suported by Conan (yet)
+    # # Linux clang-3.8 ------------------------------------------------------------
+    # - env: CLANG_VERSION=3.8 CXX_FLAGS="-std=c++14" BUILD_TYPE=Debug
+    #   os: linux
+    #   addons: &clang38
+    #     apt:
+    #       packages:
+    #         - clang-3.8
+    #       sources:
+    #         - ubuntu-toolchain-r-test
+    #         - llvm-toolchain-precise-3.8
 
-    - env: CLANG_VERSION=3.8 CXX_FLAGS="-std=c++14" BUILD_TYPE=Release
-      os: linux
-      addons: *clang38
+    # - env: CLANG_VERSION=3.8 CXX_FLAGS="-std=c++14" BUILD_TYPE=Release
+    #   os: linux
+    #   addons: *clang38
 
     # 2016/May: Clang 3.9 is not released yet.
     # # Linux clang-3.9 ------------------------------------------------------------
@@ -201,6 +202,10 @@ install:
   - g++ --version
   - clang++ --version
   
+  - gcc-6 --version
+  - g++-6 --version
+
+
   # - wget http://downloads.conan.io/latest_debian -O conan.deb
   # - sudo dpkg -i conan.deb
   # - rm conan.deb
