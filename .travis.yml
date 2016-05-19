@@ -190,7 +190,7 @@ install:
   # - conan install
   # conan install Protobuf/2.6.1@memsharded/testing -s arch="x86" -s build_type="Release" -s compiler="apple-clang" -s compiler.libcxx="libc++" -s compiler.version="7.0" -s os="Macos" -o shared="True" 
 
-  - conan install  -s compiler="apple-clang" -s compiler.version="7.0" -s compiler.libcxx="libc++" 
+  - conan install . -s compiler="apple-clang" -s compiler.version="7.0" -s compiler.libcxx="libc++" 
 
 
   # - |
