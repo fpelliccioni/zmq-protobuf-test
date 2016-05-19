@@ -30,9 +30,10 @@ install:
 
 
 build_script:
+  - cmd: conan install -o gtest:shared=True
+  - cmd: dir
   - cmd: protoc message.proto --cpp_out="."
   - cmd: mkdir build
-  - cmd: conan install -o gtest:shared=True
   - cmd: cd build
   # - cmd: cmake ../ -DBUILD_TEST=TRUE  -G "Visual Studio 14 2015 Win64"
   # - cmd: cmake --build . --config Release
