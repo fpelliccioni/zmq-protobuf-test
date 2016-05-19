@@ -30,6 +30,7 @@ install:
 
 
 build_script:
+  - cmd: protoc message.proto --cpp_out="."
   - cmd: mkdir build
   - cmd: conan install -o gtest:shared=True
   - cmd: cd build
