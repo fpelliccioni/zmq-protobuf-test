@@ -143,6 +143,12 @@ before_install:
   - echo $CC
   - echo $CXX
 
+  - export CC=clang
+  - export CXX=clang++
+
+  - echo $CC
+  - echo $CXX
+
 
 install:
   # All the dependencies are installed in ${TRAVIS_BUILD_DIR}/deps/
@@ -172,7 +178,9 @@ install:
       brew install conan
     fi
 
-
+  - g++ --version
+  - clang++ --version
+  
   # - wget http://downloads.conan.io/latest_debian -O conan.deb
   # - sudo dpkg -i conan.deb
   # - rm conan.deb
@@ -191,6 +199,7 @@ install:
   # conan install Protobuf/2.6.1@memsharded/testing -s arch="x86" -s build_type="Release" -s compiler="apple-clang" -s compiler.libcxx="libc++" -s compiler.version="7.0" -s os="Macos" -o shared="True" 
 
   - conan install . -s compiler="apple-clang" -s compiler.version="7.0" -s compiler.libcxx="libc++" 
+  # - conan install . -s compiler=apple-clang -s compiler.version=7.0 -s compiler.libcxx=libc++ 
 
 
   # - |
