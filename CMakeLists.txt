@@ -13,10 +13,11 @@ add_executable(server server.cpp)
 
 message(${CONAN_LIBS})
 
+
 set(variable "value")
-message($variable)
-set(variable variable "value")
-message($variable)
+message(${variable})
+set(variable ${variable} "value")
+message(${variable})
 
 
 
