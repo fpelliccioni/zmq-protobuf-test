@@ -12,8 +12,8 @@ build:
   verbosity: detailed
 
 configuration:
-  - Debug
   - Release
+  # - Debug
 
 branches:
   only:
