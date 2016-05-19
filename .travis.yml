@@ -201,9 +201,8 @@ install:
 
   - g++ --version
   - clang++ --version
-  
-  - gcc-6 --version
-  - g++-6 --version
+  # - gcc-6 --version
+  # - g++-6 --version
 
 
   # - wget http://downloads.conan.io/latest_debian -O conan.deb
