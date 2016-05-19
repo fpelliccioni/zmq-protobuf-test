@@ -35,6 +35,7 @@ build_script:
   # - cmd: conan install -o gtest:shared=True
   - cmd: conan install
   - cmd: dir
+  - cmd: echo %CONFIG%
   - cmd: protoc message.proto --cpp_out="."
   - cmd: mkdir build
   - cmd: cd build
@@ -42,7 +43,8 @@ build_script:
   # - cmd: cmake --build . --config Release
 
   - cmd: cmake .. -G "Visual Studio 14 2015 Win64"
-  - cmd: cmake --build . --config %CONFIG%
+  # - cmd: cmake --build . --config %CONFIG%
+  - cmd: cmake --build . --config Release
 
 test_script:
   - cmd: cd bin
