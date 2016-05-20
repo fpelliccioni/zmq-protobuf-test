@@ -200,8 +200,15 @@ install:
   #     brew install conan
   #   fi
 
-  - sudo pip install conan
-  
+  - |
+    if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
+      sudo pip install conan
+    else
+      sudo pip3 install conan
+    fi
+
+
+
   - g++ --version
   - clang++ --version
   # - gcc-6 --version
