@@ -190,16 +190,18 @@ install:
 
 
   # Download & Install Conan
-  - |
-    if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
-      wget http://downloads.conan.io/latest_debian -O conan.deb
-      sudo dpkg -i conan.deb
-      rm conan.deb
-    else
-      # pip install conan
-      brew install conan
-    fi
+  # - |
+  #   if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
+  #     wget http://downloads.conan.io/latest_debian -O conan.deb
+  #     sudo dpkg -i conan.deb
+  #     rm conan.deb
+  #   else
+  #     sudo pip install conan
+  #     brew install conan
+  #   fi
 
+  - sudo pip install conan
+  
   - g++ --version
   - clang++ --version
   # - gcc-6 --version
