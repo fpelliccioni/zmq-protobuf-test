@@ -3,125 +3,125 @@ language: cpp
 
 matrix:
   include:
-    # Linux clang-3.5 ------------------------------------------------------------
-    - env: CLANG_VERSION=3.5 CXX_FLAGS="-std=c++14" BUILD_TYPE=Debug
-      os: linux
-      addons: &clang35
-        apt:
-          packages:
-            - clang-3.5
-          sources:
-            - ubuntu-toolchain-r-test
-            - llvm-toolchain-precise-3.5
-
-    - env: CLANG_VERSION=3.5 CXX_FLAGS="-std=c++14" BUILD_TYPE=Release
-      os: linux
-      addons: *clang35
-
-    # Linux clang-3.6 ------------------------------------------------------------
-    - env: CLANG_VERSION=3.6 CXX_FLAGS="-std=c++14" BUILD_TYPE=Debug
-      os: linux
-      addons: &clang36
-        apt:
-          packages:
-            - clang-3.6
-          sources:
-            - ubuntu-toolchain-r-test
-            - llvm-toolchain-precise-3.6
-
-    - env: CLANG_VERSION=3.6 CXX_FLAGS="-std=c++14" BUILD_TYPE=Release
-      os: linux
-      addons: *clang36
-
-    # Linux clang-3.7 ------------------------------------------------------------
-    - env: CLANG_VERSION=3.7 CXX_FLAGS="-std=c++14" BUILD_TYPE=Debug
-      os: linux
-      addons: &clang37
-        apt:
-          packages:
-            - clang-3.7
-          sources:
-            - ubuntu-toolchain-r-test
-            - llvm-toolchain-precise-3.7
-
-    - env: CLANG_VERSION=3.7 CXX_FLAGS="-std=c++14" BUILD_TYPE=Release
-      os: linux
-      addons: *clang37
-
-    # 2016/May: Clang 3.8 is not suported by Conan (yet)
-    # # Linux clang-3.8 ------------------------------------------------------------
-    # - env: CLANG_VERSION=3.8 CXX_FLAGS="-std=c++14" BUILD_TYPE=Debug
+    # # Linux clang-3.5 ------------------------------------------------------------
+    # - env: CLANG_VERSION=3.5 CXX_FLAGS="-std=c++14" BUILD_TYPE=Debug
     #   os: linux
-    #   addons: &clang38
+    #   addons: &clang35
     #     apt:
     #       packages:
-    #         - clang-3.8
+    #         - clang-3.5
     #       sources:
     #         - ubuntu-toolchain-r-test
-    #         - llvm-toolchain-precise-3.8
+    #         - llvm-toolchain-precise-3.5
 
-    # - env: CLANG_VERSION=3.8 CXX_FLAGS="-std=c++14" BUILD_TYPE=Release
+    # - env: CLANG_VERSION=3.5 CXX_FLAGS="-std=c++14" BUILD_TYPE=Release
     #   os: linux
-    #   addons: *clang38
+    #   addons: *clang35
 
-    # 2016/May: Clang 3.9 is not released yet.
-    # # Linux clang-3.9 ------------------------------------------------------------
-    # - env: CLANG_VERSION=3.9 CXX_FLAGS="-std=c++14" BUILD_TYPE=Debug
+    # # Linux clang-3.6 ------------------------------------------------------------
+    # - env: CLANG_VERSION=3.6 CXX_FLAGS="-std=c++14" BUILD_TYPE=Debug
     #   os: linux
-    #   addons: &clang39
+    #   addons: &clang36
     #     apt:
     #       packages:
-    #         - clang-3.9
+    #         - clang-3.6
     #       sources:
     #         - ubuntu-toolchain-r-test
-    #         - llvm-toolchain-precise-3.9
+    #         - llvm-toolchain-precise-3.6
 
-    # - env: CLANG_VERSION=3.9 CXX_FLAGS="-std=c++14" BUILD_TYPE=Release
+    # - env: CLANG_VERSION=3.6 CXX_FLAGS="-std=c++14" BUILD_TYPE=Release
     #   os: linux
-    #   addons: *clang39
+    #   addons: *clang36
 
-    # Linux gcc-4.9 ------------------------------------------------------------
-    - env: GCC_VERSION=4.9 CXX_FLAGS="-std=c++1y" BUILD_TYPE=Debug
-      os: linux
-      addons: &gcc49
-        apt:
-          packages:
-            - g++-4.9
-          sources:
-            - ubuntu-toolchain-r-test
-
-    - env: GCC_VERSION=4.9 CXX_FLAGS="-std=c++1y" BUILD_TYPE=Release
-      os: linux
-      addons: *gcc49
-
-    # Linux gcc-5 ------------------------------------------------------------
-    - env: GCC_VERSION=5 CXX_FLAGS="-std=c++14" BUILD_TYPE=Debug
-      os: linux
-      addons: &gcc5
-        apt:
-          packages:
-            - g++-5
-          sources:
-            - ubuntu-toolchain-r-test
-
-    - env: GCC_VERSION=5 CXX_FLAGS="-std=c++14" BUILD_TYPE=Release
-      os: linux
-      addons: *gcc5
-
-    # 2016/May: GCC 6.1 is not suported by Conan (yet)
-    # # Linux gcc-6 ------------------------------------------------------------
-    # - env: GCC_VERSION=6 CXX_FLAGS="-std=c++14" BUILD_TYPE=Debug
+    # # Linux clang-3.7 ------------------------------------------------------------
+    # - env: CLANG_VERSION=3.7 CXX_FLAGS="-std=c++14" BUILD_TYPE=Debug
     #   os: linux
-    #   addons: &gcc6
+    #   addons: &clang37
     #     apt:
     #       packages:
-    #         - g++-6
+    #         - clang-3.7
+    #       sources:
+    #         - ubuntu-toolchain-r-test
+    #         - llvm-toolchain-precise-3.7
+
+    # - env: CLANG_VERSION=3.7 CXX_FLAGS="-std=c++14" BUILD_TYPE=Release
+    #   os: linux
+    #   addons: *clang37
+
+    # # 2016/May: Clang 3.8 is not suported by Conan (yet)
+    # # # Linux clang-3.8 ------------------------------------------------------------
+    # # - env: CLANG_VERSION=3.8 CXX_FLAGS="-std=c++14" BUILD_TYPE=Debug
+    # #   os: linux
+    # #   addons: &clang38
+    # #     apt:
+    # #       packages:
+    # #         - clang-3.8
+    # #       sources:
+    # #         - ubuntu-toolchain-r-test
+    # #         - llvm-toolchain-precise-3.8
+
+    # # - env: CLANG_VERSION=3.8 CXX_FLAGS="-std=c++14" BUILD_TYPE=Release
+    # #   os: linux
+    # #   addons: *clang38
+
+    # # 2016/May: Clang 3.9 is not released yet.
+    # # # Linux clang-3.9 ------------------------------------------------------------
+    # # - env: CLANG_VERSION=3.9 CXX_FLAGS="-std=c++14" BUILD_TYPE=Debug
+    # #   os: linux
+    # #   addons: &clang39
+    # #     apt:
+    # #       packages:
+    # #         - clang-3.9
+    # #       sources:
+    # #         - ubuntu-toolchain-r-test
+    # #         - llvm-toolchain-precise-3.9
+
+    # # - env: CLANG_VERSION=3.9 CXX_FLAGS="-std=c++14" BUILD_TYPE=Release
+    # #   os: linux
+    # #   addons: *clang39
+
+    # # Linux gcc-4.9 ------------------------------------------------------------
+    # - env: GCC_VERSION=4.9 CXX_FLAGS="-std=c++1y" BUILD_TYPE=Debug
+    #   os: linux
+    #   addons: &gcc49
+    #     apt:
+    #       packages:
+    #         - g++-4.9
     #       sources:
     #         - ubuntu-toolchain-r-test
 
-    # - env: GCC_VERSION=6 CXX_FLAGS="-std=c++14" BUILD_TYPE=Release
+    # - env: GCC_VERSION=4.9 CXX_FLAGS="-std=c++1y" BUILD_TYPE=Release
     #   os: linux
-    #   addons: *gcc6
+    #   addons: *gcc49
+
+    # # Linux gcc-5 ------------------------------------------------------------
+    # - env: GCC_VERSION=5 CXX_FLAGS="-std=c++14" BUILD_TYPE=Debug
+    #   os: linux
+    #   addons: &gcc5
+    #     apt:
+    #       packages:
+    #         - g++-5
+    #       sources:
+    #         - ubuntu-toolchain-r-test
+
+    # - env: GCC_VERSION=5 CXX_FLAGS="-std=c++14" BUILD_TYPE=Release
+    #   os: linux
+    #   addons: *gcc5
+
+    # # 2016/May: GCC 6.1 is not suported by Conan (yet)
+    # # # Linux gcc-6 ------------------------------------------------------------
+    # # - env: GCC_VERSION=6 CXX_FLAGS="-std=c++14" BUILD_TYPE=Debug
+    # #   os: linux
+    # #   addons: &gcc6
+    # #     apt:
+    # #       packages:
+    # #         - g++-6
+    # #       sources:
+    # #         - ubuntu-toolchain-r-test
+
+    # # - env: GCC_VERSION=6 CXX_FLAGS="-std=c++14" BUILD_TYPE=Release
+    # #   os: linux
+    # #   addons: *gcc6
 
 
     # OSX Xcode 7 ------------------------------------------------------------
