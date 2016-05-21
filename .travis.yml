@@ -196,6 +196,7 @@ install:
       rm conan.deb
     else
       # sudo pip install conan
+      brew update
       brew install conan
     fi
 
