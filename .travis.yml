@@ -155,8 +155,8 @@ branches:
     - develop
 
 before_install:
-  - echo $GCC_VERSION
-  - echo $CLANG_VERSION
+  # - echo $GCC_VERSION
+  # - echo $CLANG_VERSION
 
   - |
     if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
@@ -168,8 +168,8 @@ before_install:
       export CXX=clang++
     fi
 
-  - echo $CC
-  - echo $CXX
+  # - echo $CC
+  # - echo $CXX
 
 install:
   # All the dependencies are installed in ${TRAVIS_BUILD_DIR}/deps/
@@ -182,10 +182,10 @@ install:
       CMAKE_URL="http://www.cmake.org/files/v3.3/cmake-3.3.2-Linux-x86_64.tar.gz"
       mkdir cmake && travis_retry wget --no-check-certificate --quiet -O - ${CMAKE_URL} | tar --strip-components=1 -xz -C cmake
       export PATH=${DEPS_DIR}/cmake/bin:${PATH}
+      cd ..
     else
       brew install cmake
     fi
-    cd ..
 
 
   # Download & Install Conan
@@ -200,21 +200,22 @@ install:
     fi
 
 
-  - g++ --version
-  - clang++ --version
+  # - g++ --version
+  # - clang++ --version
   # - gcc-6 --version
   # - g++-6 --version
 
 
   # Automatic detection of your arch, compiler, etc
-  - |
-    if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
-      conan install . --build=missing 
-    else
-      # conan install Protobuf/2.6.1@memsharded/testing -s arch="x86" -s build_type="Release" -s compiler="apple-clang" -s compiler.libcxx="libc++" -s compiler.version="7.0" -s os="Macos" -o shared="True" 
-      # conan install . -s compiler="apple-clang" -s compiler.version="7.0" -s compiler.libcxx="libc++" 
-      conan install . --build=missing -s compiler=apple-clang -s compiler.version=7.0 -s compiler.libcxx=libc++ 
-    fi
+  # - |
+  #   if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
+  #     conan install . --build=missing 
+  #   else
+  #     # conan install Protobuf/2.6.1@memsharded/testing -s arch="x86" -s build_type="Release" -s compiler="apple-clang" -s compiler.libcxx="libc++" -s compiler.version="7.0" -s os="Macos" -o shared="True" 
+  #     # conan install . -s compiler="apple-clang" -s compiler.version="7.0" -s compiler.libcxx="libc++" 
+  #     conan install . --build=missing -s compiler=apple-clang -s compiler.version=7.0 -s compiler.libcxx=libc++ 
+  #   fi
+  - conan install . --build=missing 
 
 
 # install:
@@ -232,7 +233,7 @@ before_script:
   - git config --global user.email travis-bot@travis-ci.org
 
 
-  - chmod a+x protoc
+  # - chmod a+x protoc
   # - ./protoc --version
   - ./protoc message.proto --cpp_out="."
 
