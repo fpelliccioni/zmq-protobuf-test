@@ -13,10 +13,10 @@ ZMQ:shared=False
 [imports]
 bin, protoc* -> ./
 bin, *.dylib -> ./
-bin, *.so -> ./
+bin, *.so* -> ./
 bin, *.dll -> ./
 lib, *.dylib -> ./
-lib, *.so -> ./
+lib, *.so* -> ./
 lib, *.dll -> ./
 
 # bin, *.dll -> ./bin
